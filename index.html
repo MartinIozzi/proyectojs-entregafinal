@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madera</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+</head>
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+            <img src="./img/logo_madera.jpg" alt="Logo" width="60" height="48" class="d-inline-block align-text-top">
+            </a>
+        </div>
+        <div>
+            <h1 class="real_madera">RealMadera</h1>
+            <h3 class="real_madera">Compra y Venta de madera de alta calidad</h3>
+            </div>
+        </nav>
+
+
+    <div class="precio_total" id="precio_total">
+        <p class="texto_precio">El precio total de los productos es de: </p>
+        <div>
+            <p id="mostrar_precio" style="text-align: center; font-weight: bolder;"></p>
+        </div>
+    </div>
+</header>
+<body class="background">
+        <div class="contenedor-formulario">
+            <fieldset class="marco">
+                <label class="texto_seleccion" for="">Seleccione el tipo de madera deseada: Roble, Pino, Arce, Cerezo</label>
+                <input type="text" class="espacios" id="casilleros1">
+            </fieldset>
+
+            <fieldset class="marco">
+                <label class="texto_seleccion" for="">Seleccione el alto deseado: </label>
+                <input type="text" class="espacios" id="casilleros2">
+            </fieldset>
+
+            <fieldset class="marco">
+                <label class="texto_seleccion" for="">Seleccione el ancho deseado: </label>
+                <input type="text" class="espacios" id="casilleros3">
+            </fieldset>
+
+            <fieldset class="marco">
+                <label class="texto_seleccion" for="">Seleccione cantidad de cuotas (1, 3, 6, 9, 12): </label>
+                <input type="text" class="espacios" id="casilleros4">
+            </fieldset>
+        </div>
+        
+        <button onclick="guardar_datos()" class="compra">Agregar al carrito</button>
+
+        <button id="mensaje" onclick="seguir_comprando()" class="seguir">Seguir comprando</button>
+
+    <div class="contenedor" id="contenedor">
+    </div>
+<script src="mientrega.js"></script>
+</body>
+</html>
