@@ -166,9 +166,24 @@ function guardar_datos() {
     let eliminar = document.createElement("p")
     eliminar.innerHTML = `Eliminar selección`
     boton_eliminar.append(eliminar)
+    
+    let lista_compra = JSON.parse(localStorage.getItem('local'))
+    lista_compra.forEach(compra => {
+        precio_total += compra.precio_final
+    })
+    
+    let texto_final = document.getElementById("mostrar_precio");
+    texto_final.innerHTML = `$${precio_total = Math.round (precio_total)}`
+    
+    let parrafo_nuevo = document.createElement("p");
+    parrafo_nuevo.className = "esconder"
+    parrafo_nuevo.setAttribute("id", "id")
+    parrafo_nuevo.innerText = num_id
+    contenido.append(parrafo_nuevo)
+    
     eliminar.addEventListener("click" , function(){
         marco.className = "esconder"
-        let id = document.getElementById ("id").value
+        let id = parrafo_nuevo.innerText
 
         let copia_carrito = JSON.parse(localStorage.getItem('local'))
         console.log(copia_carrito)
@@ -180,23 +195,8 @@ function guardar_datos() {
         let carrito_JSON = JSON.stringify (copia_carrito)
         localStorage.setItem('local' , carrito_JSON)
     })
-
-    let lista_compra = JSON.parse(localStorage.getItem('local'))
-    lista_compra.forEach(compra => {
-    precio_total += compra.precio_final
-    })
-
-    let texto_final = document.getElementById("mostrar_precio");
-    texto_final.innerHTML = `$${precio_total = Math.round (precio_total)}`
-
-    let parrafo_nuevo = document.createElement("p");
-    parrafo_nuevo.className = "esconder"
-    parrafo_nuevo.setAttribute("id", "id")
-    parrafo_nuevo.innerText = num_id
-    contenido.append(parrafo_nuevo)
-
-
-
+    
+    
     //ALERT
     Swal.fire({
         position: 'top-end',
